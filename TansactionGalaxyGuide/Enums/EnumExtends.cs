@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TansactionGalaxyGuide
+namespace TansactionGalaxyGuide.Enums
 {
-    public class Class1
+   public class EnumExtends
     {
+
     }
 }
