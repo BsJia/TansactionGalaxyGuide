@@ -11,12 +11,13 @@ namespace TansactionGalaxyGuide.Strategys
         private IInputStrategy[] inputStrategys;
         public StategyContents()
         {
+            var conversionMachine = ConversionMachine.Init();
             inputStrategys = new IInputStrategy[]
             {
-                new HowManyStategy(),
-                new HowMuchStrategy(),
-                new SetMapStrategy(),
-                new SetPriceStrategy(),
+                new HowManyStategy(conversionMachine),
+                new HowMuchStrategy(conversionMachine),
+                new SetMapStrategy(conversionMachine),
+                new SetPriceStrategy(conversionMachine),
             };
         }
 
@@ -25,7 +26,7 @@ namespace TansactionGalaxyGuide.Strategys
             var stategy = inputStrategys.FirstOrDefault(n => n.IsMatch(input));
             if (stategy == null)
             {
-                throw new StrategyException("I have no idea what you are talking about");
+                return "I have no idea what you are talking about";
             }
            return stategy.Exeute(input);
         }

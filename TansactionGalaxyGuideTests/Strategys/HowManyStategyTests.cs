@@ -14,7 +14,8 @@ namespace TansactionGalaxyGuide.Strategys.Tests
         [TestMethod()]
         public void IsMatchTest()
         {
-            var howManyStategy = new HowManyStategy();
+            var conversionMachine = ConversionMachine.Init();
+            var howManyStategy = new HowManyStategy(conversionMachine);
 
             Assert.IsTrue(howManyStategy.IsMatch("how many Credits is glob prok Silver ?"));
             Assert.IsTrue(howManyStategy.IsMatch("how many Credits is glob prok Gold ?"));

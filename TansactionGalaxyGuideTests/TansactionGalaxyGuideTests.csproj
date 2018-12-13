@@ -56,6 +56,8 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="ConversionMachineTests.cs" />
+    <Compile Include="Models\RomanConverterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Strategys\HowManyStategyTests.cs" />
     <Compile Include="Strategys\SetMapStrategyTests.cs" />

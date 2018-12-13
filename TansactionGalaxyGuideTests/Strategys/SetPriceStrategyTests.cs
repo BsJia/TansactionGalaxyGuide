@@ -14,7 +14,8 @@ namespace TansactionGalaxyGuide.Strategys.Tests
         [TestMethod()]
         public void IsMatchTest()
         {
-            var howManyStategy = new SetPriceStrategy();
+           var conversionMachine =  ConversionMachine.Init();
+            var howManyStategy = new SetPriceStrategy(conversionMachine);
 
             Assert.IsTrue(howManyStategy.IsMatch("pish pish Iron is 3910 Credits"));
             Assert.IsTrue(howManyStategy.IsMatch("glob prok Gold is 57800 Credits"));
@@ -22,10 +23,5 @@ namespace TansactionGalaxyGuide.Strategys.Tests
             Assert.IsFalse(howManyStategy.IsMatch("glob prok Gold is 5780dd0 Cwredits"));
         }
 
-        [TestMethod()]
-        public void IsMatchTest1()
-        {
-            Assert.Fail();
-        }
     }
 }

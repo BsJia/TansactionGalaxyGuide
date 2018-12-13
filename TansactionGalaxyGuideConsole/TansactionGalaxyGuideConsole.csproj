@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{988E85A5-8C6F-4C7B-ADAA-C42CA4D10BD9}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TansactionGalaxyGuide</RootNamespace>
-    <AssemblyName>TansactionGalaxyGuide</AssemblyName>
+    <ProjectGuid>{6F9191C8-454D-453C-A835-249289979A3B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TansactionGalaxyGuideConsole</RootNamespace>
+    <AssemblyName>TansactionGalaxyGuideConsole</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,19 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConversionMachine.cs" />
-    <Compile Include="Enums\RomanNumberEnum.cs" />
-    <Compile Include="Exceptions\ConversionMachineExceptions.cs" />
-    <Compile Include="Exceptions\StrategyException.cs" />
-    <Compile Include="Models\RomanConverter.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Strategys\HowManyStategy.cs" />
-    <Compile Include="Strategys\HowMuchStrategy.cs" />
-    <Compile Include="Strategys\Interface\IInputStrategy.cs" />
-    <Compile Include="Strategys\SetMapStrategy.cs" />
-    <Compile Include="Strategys\SetPriceStrategy.cs" />
-    <Compile Include="Strategys\StategyContents.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TansactionGalaxyGuide\TansactionGalaxyGuide.csproj">
+      <Project>{988E85A5-8C6F-4C7B-ADAA-C42CA4D10BD9}</Project>
+      <Name>TansactionGalaxyGuide</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

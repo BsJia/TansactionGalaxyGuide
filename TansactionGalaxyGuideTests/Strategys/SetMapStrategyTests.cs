@@ -14,7 +14,8 @@ namespace TansactionGalaxyGuide.Strategys.Tests
         [TestMethod()]
         public void IsMatchTest()
         {
-            var howManyStategy = new SetMapStrategy();
+            var conversionMachine = ConversionMachine.Init();
+            var howManyStategy = new SetMapStrategy(conversionMachine);
 
             Assert.IsTrue(howManyStategy.IsMatch("glob is I"));
             Assert.IsTrue(howManyStategy.IsMatch("prok is V"));
