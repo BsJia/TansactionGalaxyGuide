@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TansactionGalaxyGuide.Exceptions;
+﻿using System.Linq;
 
 namespace TansactionGalaxyGuide.Strategys
 {
- public   class StategyContents
+    public   class StategyContents
     {
         private IInputStrategy[] inputStrategys;
         public StategyContents()

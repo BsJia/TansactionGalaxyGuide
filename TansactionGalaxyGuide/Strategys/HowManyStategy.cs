@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
-using TansactionGalaxyGuide.Enums;
-using TansactionGalaxyGuide.Exceptions;
 using TansactionGalaxyGuide.Models;
 
 namespace TansactionGalaxyGuide.Strategys

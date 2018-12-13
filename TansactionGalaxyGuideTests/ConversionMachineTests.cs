@@ -31,8 +31,7 @@ namespace TansactionGalaxyGuide.Tests
             conversionMachine.SetExchangeRate(key, 12);
             var exchangeRate = conversionMachine.GetExchangeRate(key);
             Assert.IsTrue(exchangeRate == 12);
-            var rate = conversionMachine.GetExchangeRate("test");
-            Assert.IsNull(rate);
+  
      
         }
 
