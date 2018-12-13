@@ -19,7 +19,17 @@ namespace TansactionGalaxyGuideConsole
             var writeSb = new StringBuilder() ;
             while (!string.IsNullOrEmpty(readLine))
             {
-                var exeResult= stategyContents.Exeute(readLine);
+                string exeResult = string.Empty;
+                try
+                {
+                    exeResult = stategyContents.Exeute(readLine);
+                }
+                catch (Exception e)
+                {
+                    writeSb.Append(e.Message);
+                    writeSb.Append("\n");
+                }
+
                 if (!string.IsNullOrEmpty(exeResult))
                 {
                     writeSb.Append(exeResult);

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TansactionGalaxyGuide.Enums;
 using TansactionGalaxyGuide.Exceptions;
 
 namespace TansactionGalaxyGuide
 {
-  public  class ConversionMachine
+    public  class ConversionMachine
     {
         private static readonly object lockObj = new object();
         private static  ConversionMachine conversionMachine;
@@ -31,11 +27,20 @@ namespace TansactionGalaxyGuide
             }
             return conversionMachine;
         }
-
+        /// <summary>
+        /// set  mapping
+        /// </summary>
+        /// <param name="name">  </param>
+        /// <param name="romanNumberEnum"></param>
         public void SetNameMapping(string  name, RomanNumberEnum romanNumberEnum)
         {
             nameMapping.Add(name, romanNumberEnum);
         }
+        /// <summary>
+        /// get mapping
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public RomanNumberEnum GetNameMapping(string name)
         {
           var tryResult =  nameMapping.TryGetValue(name, out var romanNumberEnum);
@@ -43,11 +48,20 @@ namespace TansactionGalaxyGuide
 
             return romanNumberEnum;
         }
-
+        /// <summary>
+        /// setting  exchange rate
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="rate"></param>
         public void SetExchangeRate(string name, decimal rate)
         {
             exchangeRates.Add(name, rate);
         }
+        /// <summary>
+        /// get exchange rate
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public decimal GetExchangeRate(string name)
         {
            var tryResult = exchangeRates.TryGetValue(name, out var exchangeRate);
